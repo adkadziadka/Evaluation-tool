@@ -37,7 +37,6 @@ ActiveRecord::Schema.define(version: 20170628080618) do
   create_table "students", force: :cascade do |t|
     t.string "picture"
     t.string "full_name"
-    t.date "day"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "batch_id"
