@@ -1,7 +1,14 @@
-<div class="container">
+<div class="container batch-container">
 	<div class="batch-list">
 	<% @batches.each do |batch| %>
+		<li class="batch-item">
 		<%= link_to "Batch#" + batch.number.to_s, batch_path(batch) %>
+		<h6><%= batch.start_date.to_s %>
+			<br>
+			<%= batch.end_date.to_s %>
+		</h6>
+			
+		</li>
 	<% end %>
 	</div>
 </div>
