@@ -1,0 +1,30 @@
+<%= form_for @batch do |f| %>
+  <div class="form-group">
+    <label>Batch number:</label>
+    <%= f.number_field :number, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <label>Picture</label>
+    <%= f.text_field :picture, placeholder: "image url", class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <label>Batch</label>
+    <%= f.number_field :number, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <label>Start date</label>
+    <%= f.date_field :start_date %>
+  </div>
+
+  <div class="form-group">
+    <label>End date</label>
+    <%= f.date_field :end_date %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Save", class: "btn btn-primary" %>
+  </div>
+<% end %>

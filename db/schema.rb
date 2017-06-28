@@ -17,8 +17,8 @@ ActiveRecord::Schema.define(version: 20170628080618) do
 
   create_table "batches", force: :cascade do |t|
     t.integer "number"
-    t.date "start_date"
-    t.date "end_date"
+    t.datetime "start_date"
+    t.datetime "end_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -40,10 +40,8 @@ ActiveRecord::Schema.define(version: 20170628080618) do
     t.date "day"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "student_id"
     t.bigint "batch_id"
     t.index ["batch_id"], name: "index_students_on_batch_id"
-    t.index ["student_id"], name: "index_students_on_student_id"
   end
 
   create_table "teachers", force: :cascade do |t|
@@ -66,5 +64,4 @@ ActiveRecord::Schema.define(version: 20170628080618) do
   add_foreign_key "performances", "batches"
   add_foreign_key "performances", "students"
   add_foreign_key "students", "batches"
-  add_foreign_key "students", "students"
 end
