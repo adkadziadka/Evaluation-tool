@@ -10,10 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170627184946) do
+ActiveRecord::Schema.define(version: 20170628080618) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "batches", force: :cascade do |t|
+    t.integer "number"
+    t.date "start_date"
+    t.date "end_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "performances", force: :cascade do |t|
+    t.string "color"
+    t.text "remarks"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "student_id"
+    t.bigint "batch_id"
+    t.index ["batch_id"], name: "index_performances_on_batch_id"
+    t.index ["student_id"], name: "index_performances_on_student_id"
+  end
 
   create_table "students", force: :cascade do |t|
     t.string "picture"
@@ -21,6 +40,10 @@ ActiveRecord::Schema.define(version: 20170627184946) do
     t.date "day"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "student_id"
+    t.bigint "batch_id"
+    t.index ["batch_id"], name: "index_students_on_batch_id"
+    t.index ["student_id"], name: "index_students_on_student_id"
   end
 
   create_table "teachers", force: :cascade do |t|
@@ -40,4 +63,8 @@ ActiveRecord::Schema.define(version: 20170627184946) do
     t.index ["reset_password_token"], name: "index_teachers_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "performances", "batches"
+  add_foreign_key "performances", "students"
+  add_foreign_key "students", "batches"
+  add_foreign_key "students", "students"
 end
