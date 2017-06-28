@@ -1,0 +1,7 @@
+<div class="container">
+	<div class="batch-list">
+	<% @batch.students.each do |student| %>
+		<%= link_to student.full_name, batch_student_path(batch_id: @batch.id, id: student.id) %>
+	<% end %>
+	</div>
+</div>

@@ -1,0 +1,7 @@
+<div class="container">
+	<div class="batch-list">
+	<% @batches.each do |batch| %>
+		<%= link_to "Batch#" + batch.number.to_s, batch_path(batch) %>
+	<% end %>
+	</div>
+</div>
