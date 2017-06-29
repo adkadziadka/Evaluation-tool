@@ -1,0 +1,17 @@
+<div class="container batch-container">
+	<button class="btn btn-danger btn-sm">
+	<%= link_to "Add Batch", new_batch_path %></li>
+	</button>
+
+	<div class="batch-list">
+	<% @batches.each do |batch| %>
+		<li class="batch-item">
+		<%= link_to "Batch#" + batch.number.to_s, batch_path(batch) %>
+		<h6>Start: <%= batch.start_date.to_date %>
+			<br>
+			End: <%= batch.end_date.to_date %>
+		</h6>
+		</li>
+	<% end %>
+	</div>
+</div>
