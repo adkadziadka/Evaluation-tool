@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   devise_for :teachers
 
   resources :batches do
+  	get :ask
   	resources :students do
   		resources :performances
   	end

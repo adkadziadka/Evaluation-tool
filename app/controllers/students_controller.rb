@@ -26,13 +26,21 @@ class StudentsController < ApplicationController
 		end
 	end
 
-	def update
-		if @student.update(student_params)
-			redirect_to @student, notice: "Student updated"
-		else
-			render :edit
-		end
-	end
+	def edit
+		@batch = Batch.find(params[:batch_id])
+		@student = @batch.students.find(params[:id])
+  end
+
+  def update
+    @batch = Batch.find(params[:batch_id])
+		@student = @batch.students.find(params[:id])
+
+    if @student.update_attributes(student_params)
+      redirect_to batch_student_path(batch_id: @batch.id, id: @student.id), notice: "Student updated!"
+    else
+      render 'edit'
+    end
+  end
 
 	private
 
