@@ -1,8 +1,13 @@
 <div class="container">
+	<div class="ask-question">
+		<button class="btn btn-danger btn-sm">
+		<%= link_to "Ask question!", batch_ask_path(batch_id: @batch.id) %>
+		</button>
+	</div>
 	<div class="grades-block">
-		<div class="green"></div>
-		<div class="yellow"></div>
-		<div class="red"></div>
+		<div class="green"><%= @batch.percentages[:green] %>%</div>
+		<div class="yellow"><%= @batch.percentages[:yellow] %>%</div>
+		<div class="red"><%= @batch.percentages[:red] %>%</div>
 	</div>
 
 	<button class="btn btn-danger btn-sm">
@@ -10,13 +15,21 @@
 	</button>
 
 	<button class="btn btn-danger btn-sm">
-	<%= link_to "Delete Batch", batch_path(batch_id: @batch), :confirm => "Are you sure?", :method => :delete %>
+	<%= link_to "Delete Batch", batch_path(batch_id: @batch.id), :confirm => "Are you sure?", :method => :delete %>
 	</button>
+
+
+
+  <button class="btn btn-default">
+  	<%= link_to 'Back', url_for(:back) %>
+  </button>
 
 	<div class="batch-list">	
 	<% @batch.students.each do |student| %>
 		<li class="students-items">
-		<%= link_to image_tag(student.picture),batch_student_path(batch_id: @batch.id, id: student.id), class: 'photo-mini' %>
+			<div class="color<%= student.performances.last.rate %>" >
+				<%= link_to image_tag(student.picture),batch_student_path(batch_id: @batch.id, id: student.id), class: 'photo-mini' %>
+			</div>
 		<br>
 		<br>
 		<%= link_to student.full_name, batch_student_path(batch_id: @batch.id, id: student.id) %>
