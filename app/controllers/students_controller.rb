@@ -1,16 +1,27 @@
 class StudentsController < ApplicationController
-	before_action :set_student, only [:show, :edit, :update]
 	before_action :authenticate_teacher!
 
 	def index
-		@students = current_teacher.students
+		@students = Student.all
 	end
 
 	def show
+		@student = Student.find(params[:id])
 	end
 
 	def new
-		@student - current_teacher.students.build
+		@batch = Batch.find(params[:batch_id])
+		@student = Student.new
+	end
+
+	def create
+		@batch = Batch.find(params[:batch_id])
+		@student = @batch.students.new(student_params)
+		if @student.save
+			redirect_to batch_path(@batch), notice: "Student created succesfully!"
+		else
+			render "new"
+		end
 	end
 
 	def update
@@ -24,10 +35,6 @@ class StudentsController < ApplicationController
 	private
 
 	def student_params
-		params
-			.require(:student)
-			.permit(
-					:picture, :full_name, :day
-				)
+		params.require(:student).permit(:picture, :full_name)
 	end
 end

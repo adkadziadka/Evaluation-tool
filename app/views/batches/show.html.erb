@@ -1,6 +1,19 @@
 <div class="container">
-	<div class="batch-list">
-	
+	<div class="grades-block">
+		<div class="green"></div>
+		<div class="yellow"></div>
+		<div class="red"></div>
+	</div>
+
+	<button class="btn btn-danger btn-sm">
+		<%= link_to "Add Student", new_batch_student_path(batch_id: @batch.id) %>
+	</button>
+
+	<button class="btn btn-danger btn-sm">
+	<%= link_to "Delete Batch", batch_path(batch_id: @batch), :confirm => "Are you sure?", :method => :delete %>
+	</button>
+
+	<div class="batch-list">	
 	<% @batch.students.each do |student| %>
 		<li class="students-items">
 		<%= link_to image_tag(student.picture),batch_student_path(batch_id: @batch.id, id: student.id), class: 'photo-mini' %>
