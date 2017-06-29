@@ -10,13 +10,16 @@
 	<h1><%= @student.full_name %></h1>
 	<div class="days-marks">
 	</div>
+	<%= form_for [@batch, @student, @performance] do |f| %>
 	 <div class="form-group">
     <label>Remarks:</label>
-  <%= f.text_area_tag( "Write something...", size: 24x6) %>
+  <%= f.text_area(:remarks, value: 'Write something ...', size: "24x6") %>
   </div>
+
   <div class="actions">
     <%= f.submit "Save", class: "btn btn-primary" %>
     <%= f.submit "Save and next", class: "btn btn-primary" %>
   </div>
+  <% end %>
 </aside>
 </div>
