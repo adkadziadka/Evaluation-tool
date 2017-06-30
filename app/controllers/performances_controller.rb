@@ -10,7 +10,7 @@ class PerformancesController < ApplicationController
 		@student = @batch.students.find(params[:student_id])
 		@performance = @student.performances.new(performance_params)
 		if @performance.save
-			redirect_to batch_student_path(batch_id: @batch.id, id: @student.id), notice: "Remark created succesfully!"
+			redirect_to batch_path(@batch.id), notice: "Remark created succesfully!"
 		else
 			render "students/show"
 		end
@@ -20,6 +20,12 @@ class PerformancesController < ApplicationController
 	private
 
 	def performance_params
+		params[:performance][:rate] = case params[:performance][:rate].to_s
+																	when /green/  then 3
+																	when /yellow/ then 2
+																	when /red/    then 1
+																	else
+																	end
 		params.require(:performance).permit(:remarks, :date, :rate)
 	end
 

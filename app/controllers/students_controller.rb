@@ -20,7 +20,7 @@ class StudentsController < ApplicationController
 		@batch = Batch.find(params[:batch_id])
 		@student = @batch.students.new(student_params)
 		if @student.save
-			redirect_to batch_path(@batch), notice: "Student created succesfully!"
+			redirect_to batch_path(@batch.id), notice: "Student created succesfully!"
 		else
 			render "new"
 		end
@@ -36,7 +36,7 @@ class StudentsController < ApplicationController
 		@student = @batch.students.find(params[:id])
 
     if @student.update_attributes(student_params)
-      redirect_to batch_student_path(batch_id: @batch.id, id: @student.id), notice: "Student updated!"
+      redirect_to batch_path(@batch.id), notice: "Student updated!"
     else
       render 'edit'
     end

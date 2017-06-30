@@ -1,15 +1,24 @@
 <% if !teacher_signed_in? %>
-	<div class="container-welcome">
-		<h1>Evaluation App</h1>
+	<div class="jumbotron">
+		<h1><strong>Evaluation App<strong></h1>
+		<br>
+		<br>
 		<p>Build an Evaluation Tool for Teachers</p>
+		<img src="https://goo.gl/KCnjVW" width="300px">
 		<br>
 		<br>
-		<button type="button" class="btn btn-primary btn-lg btn-block active"><%= link_to "Log In", new_teacher_session_path %></button>
+		<br>
+		<button type="button" class="btn btn-primary btn-lg active"><%= link_to "Log In", new_teacher_session_path %></button>
 	</div>
 <% else %>
-	<div class="container-welcome">
+	<div class="jumbotron">
 		<h1>Evaluation App</h1>
-		<p>Welcome</p>
+		<br>
+		<br>
+		<br>
+		<p><strong>WELCOME</strong><br><br>
+		Any Questions? If you have about the assignment, feel free to contact Wouter in
+person, on Slack, or via teachers@codaisseur.com. </p>
 		<br>
 		<br>
 		<button type="button" class="btn btn-primary btn-lg btn-block active"><%= link_to "Batches", batches_path %></button>

@@ -27,7 +27,7 @@ class Batch < ApplicationRecord
 				students_array += [student, student, student] if performance.rate == 1
 			end
 		end
-		students.sample
+		students_array.sample
 	end
 end
 	

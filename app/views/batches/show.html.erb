@@ -1,6 +1,6 @@
 <div class="container">
 	<div class="ask-question">
-		<button class="btn btn-danger btn-sm">
+		<button class="btn btn-danger btn-sm ask">
 		<%= link_to "Ask question!", batch_ask_path(batch_id: @batch.id) %>
 		</button>
 	</div>
@@ -9,7 +9,7 @@
 		<div class="yellow"><%= @batch.percentages[:yellow] %>%</div>
 		<div class="red"><%= @batch.percentages[:red] %>%</div>
 	</div>
-
+<br>
 	<button class="btn btn-danger btn-sm">
 		<%= link_to "Add Student", new_batch_student_path(batch_id: @batch.id) %>
 	</button>
@@ -17,8 +17,6 @@
 	<button class="btn btn-danger btn-sm">
 	<%= link_to "Delete Batch", batch_path(batch_id: @batch.id), :confirm => "Are you sure?", :method => :delete %>
 	</button>
-
-
 
   <button class="btn btn-default">
   	<%= link_to 'Back', url_for(:back) %>
@@ -32,7 +30,7 @@
 			</div>
 		<br>
 		<br>
-		<%= link_to student.full_name, batch_student_path(batch_id: @batch.id, id: student.id) %>
+		<h4><span><%= link_to student.full_name, batch_student_path(batch_id: @batch.id, id: student.id), class: "student-name" %></span></h4>
 		</li>
 	<% end %>
 	
