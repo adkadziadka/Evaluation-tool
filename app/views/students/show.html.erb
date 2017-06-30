@@ -7,6 +7,16 @@
 	<div class="date">
 		<%=f.date_field(:date, value: Date.today) %>
 	</div>
+	<br>
+	<br>
+	<div class="radio-buttons">
+		<label for="rate"> Rate: </label>
+		<% ['red', 'yellow', 'green'].each do |rate| %>
+		<br>
+		<%= rate.humanize %>
+		<%= f.radio_button(:rate, value: rate) %>
+		<% end %>
+	</div>
 </section>
 <aside class="right-column">
 	<h1><%= @student.full_name %></h1>
