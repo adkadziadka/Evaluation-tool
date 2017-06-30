@@ -63,30 +63,43 @@ a, li, a:hover, li:hover{
 	height: 20.5rem;
 }
 .grades-block{
-	display:flex;
-	margin: 1rem 3rem 8rem 3rem;	
+	display: flex;
+	flex: 1;
+	margin: 1rem 3rem 3rem 3rem;	
 }
 .green{
-	width: 20rem;
+	text-align: bottom;
+	font-size: 4rem;
+	width: 10rem;
 	height: 10rem;
 	background-color: green;
-	flex: 1;
+	border-radius: 50%;
+	margin: 0 3rem;
 }
 
 .yellow{
-	width: 20rem;
+	text-align: bottom;
+	font-size: 4rem;
+	width: 10rem;
 	height: 10rem;
 	background-color: yellow;
-	flex: 1;
+	border-radius: 50%;
+	margin: 0 3rem;
 }
 
 .red{
-	width: 20rem;
+	text-align: bottom;
+	font-size: 4rem;
+	width: 10rem;
 	height: 10rem;
 	background-color: red;
-	flex: 1;
+	border-radius: 50%;
+	margin: 0 3rem;
 }
 
+.ask-question{
+	margin: 3rem 0;
+}
 .dashboard{
 	display: flex;
 
@@ -104,9 +117,11 @@ a, li, a:hover, li:hover{
 
 .days-marks{
 	margin: 2rem;
+	display: flex;
 }
 
 .color1{
+	flex:1;
 	width: 4rem;
 	height: 4rem;
 	background-color: red;
@@ -116,6 +131,7 @@ a, li, a:hover, li:hover{
 }
 
 .color2{
+	flex:1;
 	width: 4rem;
 	height: 4rem;
 	background-color: yellow;
@@ -125,6 +141,7 @@ a, li, a:hover, li:hover{
 }
 
 .color3{
+	flex:1;
 	width: 4rem;
 	height: 4rem;
 	background-color: green;
@@ -137,7 +154,18 @@ aside > h1{
 	margin-bottom: 5rem;
 }
 .form-control{
-	width: 80rem;
+	width: 60rem;
 	margin: 2rem;
 }
 
+.actions{
+	margin: 3rem 2rem;
+}
+
+.student-name{
+	fornt-size: 1rem;
+	text-align: center;
+	background-color: white;
+	width: 2rem;
+	padding:0.5rem 2rem;
+}

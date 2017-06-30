@@ -19,20 +19,21 @@
 	 <div class="form-group">
     <label>Remarks:</label>
     <br>
-  <%= f.text_area(:remarks, class: "form-control", value: 'Write something ...') %>
+  <%= f.text_area(:remarks, class: "form-control", placeholder: 'Write something ...') %>
   </div>
 
   <div class="actions">
     <%= f.submit "Save", class: "btn btn-primary" %>
     <%= f.submit "Save and next", class: "btn btn-primary" %>
-  </div>
   <% end %>
   <br><br>
+
   <button class="btn btn-default">
   	<%= link_to 'Back', url_for(:back) %>
   </button>
   <button class="btn btn-danger">
 		<%=link_to "Edit Student", edit_batch_student_path(batch_id: @batch.id, id: @student.id)%>
 	</button>
+	</div>
 </aside>
 </div>
