@@ -3,6 +3,6 @@ class Performance < ApplicationRecord
 
 
 	validates :rate, presence: true
-	# validates :date, presence: true, uniqueness: true
+	validates :date, presence: true, uniqueness: true
 	validates :remarks, length: { maximum: 800}
 end

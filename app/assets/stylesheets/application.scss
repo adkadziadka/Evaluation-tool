@@ -5,6 +5,10 @@ html{
 	height: 100%;
 	font-size: 10px;
 }
+
+body{
+	background-image: url("https://goo.gl/Z5sD8s");
+}
 a, li, a:hover, li:hover{
 	list-style-type: none;
 	color: black;
@@ -168,4 +172,8 @@ aside > h1{
 	background-color: white;
 	width: 2rem;
 	padding:0.5rem 2rem;
+}
+
+.date{
+	matgin: 3rem auto;
 }
