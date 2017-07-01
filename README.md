@@ -1,24 +1,14 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Evaluation tool for teachers to help rate the students, see their progres and note who has the biggest problems.
 
-Things you may want to cover:
+the algorithm:
 
-* Ruby version
+pick a random student based on:
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- generate random number to determinate color first;
+- select a random student with thatcolor:
+    -use the database to pick a only one random student;
+- write unit test (model only) that prove the above algorithm works;
+----------------------------
+BONUS: Select students with less questions more that those with more questions.
