@@ -25,7 +25,7 @@
 	<div class="batch-list">	
 	<% @batch.students.each do |student| %>
 		<li class="students-items">
-			<div class="color<%= student.performances.last.rate %>" >
+			<div class="color<%= student.performances.last && student.performances.last.rate %>" >
 				<%= link_to image_tag(student.picture),batch_student_path(batch_id: @batch.id, id: student.id), class: 'photo-mini' %>
 			</div>
 		<br>
