@@ -1,6 +1,9 @@
 class BatchesController < ApplicationController
 	def index
-		@batches = Batch.all
+		@batches = Batch.search(params[:search])
+		if @batches.empty?
+			flash.now[:alert] = "No results or incorect start date. Try again."
+		end
 	end
 
 	def show

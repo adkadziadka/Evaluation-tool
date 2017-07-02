@@ -62,5 +62,13 @@ class Batch < ApplicationRecord
 	# 	end
 	# 	students_array.sample
 	# end
+
+	def self.search(search)
+		if search
+			where(:start_date => search)
+		else
+			Batch.all
+		end
+	end
 end
 	
