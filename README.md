@@ -14,6 +14,7 @@ pick a random student based on:
 - write unit test (model only) that prove the above algorithm works;
 ----------------------------
 BONUS: Select students with less questions more that those with more questions.
+----------------------------
 
 #2 algorithm:
 
