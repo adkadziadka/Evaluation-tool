@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   devise_for :teachers
 
+
+	get '/batches/search', to: 'batches#index', as: 'search'
   resources :batches do
   	get :ask
   	resources :students do

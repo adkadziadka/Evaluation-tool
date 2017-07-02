@@ -1,10 +1,23 @@
 <div class="container batch-container">
-	<button class="btn btn-danger btn-sm">
-	<%= link_to "Add Batch", new_batch_path %></li>
-	</button>
+<h4> Search a batch:</h4>
+<br>
+<%= form_tag search_path, :method=> 'get' do %>
+	<p>
+		<%= date_field_tag :search, params[:search] %>
+		<%= submit_tag "Search", class: 'btn btn-primary btn-sm', :start_date => nil %>
+	</p>
+<% end %>
   <button class="btn btn-default">
   	<%= link_to 'Back', root_path %>
   </button>
+   <button class="btn btn-default">
+  	<%= link_to 'Refresh', batches_path %>
+  </button>
+  <br>
+  <br>
+  <button class="btn btn-danger btn-md">
+		<%= link_to "Add Batch", new_batch_path %></li>
+	</button>
 
 	<div class="batch-list">
 	<% @batches.each do |batch| %>

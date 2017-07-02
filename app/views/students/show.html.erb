@@ -4,12 +4,13 @@
 	<div class="photo-big">
 		<%= image_tag(@student.picture) %>
 	</div>
+	<br>
+	<br>
 	<div class="date">
 		<%=f.date_field(:date, value: Date.today) %>
 	</div>
 	<br>
-	<br>
-	<div class="radio-buttons">
+	<div class="radio-buttons jumbotron">
 		<label for="rate"> Rate: </label>
 		<% ['red', 'yellow', 'green'].each do |rate| %>
 		<br>
@@ -39,7 +40,7 @@
   <br><br>
 
   <button class="btn btn-default">
-  	<%= link_to 'Back', batch_path %>
+  	<%= link_to 'Back', batch_path(@batch.id) %>
   </button>
   <button class="btn btn-danger">
 		<%=link_to "Edit Student", edit_batch_student_path(batch_id: @batch.id, id: @student.id)%>
