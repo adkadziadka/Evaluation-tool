@@ -12,4 +12,4 @@ RSpec.describe Batch, type: :model do
   		batch.get_student.class == Student
   	end
   end
-end
+end 
