@@ -12,15 +12,14 @@ pick a random student based on:
 - select a random student with that color:
     -use the database to pick a only one random student;
 - write unit test (model only) that prove the above algorithm works;
-----------------------------
-BONUS: Select students with less questions more that those with more questions.
-----------------------------
 
 #2 algorithm:
 
 pick a random student and generate random number to determinate color first.
 select a random student with that color.
 
+----------------------------------------
+selected one:
 #3 algorithm:
 
 pick a random student where:
