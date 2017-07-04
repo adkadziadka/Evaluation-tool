@@ -49,7 +49,8 @@ class Batch < ApplicationRecord
 	# end
 
 
-	# best choice:
+
+	# # best choice:
 
 	# def get_student
 	# 	students_array = []
